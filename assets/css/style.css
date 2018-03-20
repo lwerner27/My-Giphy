@@ -1,0 +1,14 @@
+
+
+#gif-dump {
+    display: inline-block;
+}
+
+.gif-container {
+    margin-top: 50px;
+    /* border: solid black 2px; */
+}
+
+img {
+    max-width: 90%;
+}

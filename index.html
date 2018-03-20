@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>My Giphy</title>
+        <!-- JQuery Link -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <!-- Materialize Links -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <!-- Style Link -->
+        <link rel="stylesheet" href="./assets/css/style.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 center-align" id="button-dump">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col m6 s6 offset-m2">
+                    <input value="" id="new-topic" type="text" class="validate">
+                    <label class="active" for="first_name2">New Topic</label>
+                </div>
+                <div class="col m2 s2">
+                    <a class="waves-effect waves-light btn" id="add-button">Add</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m6 center-align" id="gif-dump-left"></div>
+                <div class="col s12 m6 center-align" id="gif-dump-right"></div>
+            </div>
+        </div>
+        <!-- Scripts -->
+        <script src="./assets/javascript/app.js"></script>
+    </body>
+
+</html>
