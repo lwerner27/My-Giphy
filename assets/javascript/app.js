@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     Materialize.updateTextFields();
     // Arrays and Variables
-    let myTopics = ["Video Games", "Baseball", "Football", "Dillon Francis", "The Eagles", "Marvel"]
+    let myTopics = ["Video Games", "Baseball", "Football", "The Eagles", "Marvel"]
     let buttonDump = $("#button-dump")
     let whichSide = "left"
 
@@ -55,7 +55,11 @@ $(document).ready(function () {
                 rating.text(`Rating: ${currentGif.rating}`)
                 
                 let newGif = $("<img>")
-                newGif.attr("src", currentGif.images.downsized.url)
+                newGif.attr("src", currentGif.images.downsized_still.url)
+                newGif.attr("data-animate", currentGif.images.downsized.url)
+                newGif.attr("data-still", currentGif.images.downsized_still.url)
+                newGif.attr("data-state", "still")
+                newGif.attr("class", "new-gif")
 
                 gifContainer.append(rating, newGif)
 
@@ -73,4 +77,22 @@ $(document).ready(function () {
     })
 
     createButtons()
+
+    $(document).on('click', '.new-gif', function (event) {
+        console.log($(this))
+        let currentState =($(this)["0"].attributes[3].value)
+
+        if(currentState === "still") {
+            // Changes source to data-animate
+            $(this)["0"].attributes["0"].value = $(this)["0"].attributes[1].value
+            // Changes state to animate
+            $(this)["0"].attributes[3].value = 'animate'
+        } else {
+            //Changes sourceto data-still
+            $(this)["0"].attributes["0"].value = $(this)["0"].attributes[2].value
+            // Changes state to still
+            $(this)["0"].attributes[3].value = 'still'
+        }
+
+    })
 })
